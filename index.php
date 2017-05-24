@@ -1,14 +1,7 @@
-<!doctype html>
-<html lang="fr">
 
-<head>
-    <meta charset="utf-8">
-    <meta>
-    <title>SUNDAYS</title>
-    <link rel="stylesheet" href="static/external/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/external/font-awesome-4.7.0/css/font-awesome.min.css">
-</head>
+<?php
+    get_header();
+?>
 
 <body>
     <header>
@@ -38,133 +31,30 @@
     <main>
         <h2>spring summer 2017</h2>
         <div class="container">
+            <?php
+                $args = array(
+                    'posts-per-page' => 20,
+                    'orderby' => 'date',
+                    'category' => '3, 4, 5',
+                );
+                $posts = get_posts($args);
 
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">buy</p>
-                <p>winter scarf</p>
-                <p>$180.00</p>
-            </article>
+               foreach ($posts as $post) {
+                   setup_postdata($post);
+                   $cats = get_the_category();
+                   ?>
 
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>summer sandals</p>
-                <p>$220.00</p>
-            </article>
+                   <article class="<?php echo $cats[0]->slug; ?>">
+                   <img src='http://lorempixel.com/150/200' alt='img'>
+                   <h4><?php echo $cats[0]->name; ?></h4>
+                   <h4><a href="#"><?php the_title(); ?></a></h4>
+                   <h5 class="price"><?php the_meta(); ?></h5>';
+                   </article>
+                   <?php
+               }
 
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">buy</p>
-                <p>red hat and worf</p>
-                <p>$200.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">buy</p>
-                <p>green coat</p>
-                <p>$220.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>dark coat</p>
-                <p>$220.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">buy</p>
-                <p>blue trousers</p>
-                <p>$220.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">sold out</p>
-                <p>blue sweater</p>
-                <p>s$220.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">buy</p>
-                <p>blue shirt</p>
-                <p>$220.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>blue backpack</p>
-                <p>$120.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>beach chair</p>
-                <p>$80.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>decoration letter</p>
-                <p>$120.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>sutton bench</p>
-                <p>$120.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">buy</p>
-                <p>red trousers</p>
-                <p>$220.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>winter sandals</p>
-                <p>$220.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>beach chair</p>
-                <p>$80.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">buy</p>
-                <p>winter scarf</p>
-                <p>$180.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">on sale</p>
-                <p>green backpack</p>
-                <p>$120.00</p>
-            </article>
-
-            <article>
-                <img src="http://lorempixel.com/120/150" alt="product" class="img-responsive">
-                <p class="status">sold out</p>
-                <p>navy sweater</p>
-                <p>$220.00</p>
-            </article>
-        </div>
+            ?>
+       </div>
     </main>
     <footer>
         <div class="container">
@@ -216,5 +106,3 @@
     <script src="static/external/jquery/dist/jquery.min.js"></script>
     <script src="static/js/script.js"></script>
 </body>
-
-</html>

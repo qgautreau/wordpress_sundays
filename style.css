@@ -3,7 +3,87 @@ Author: Somebody
 Description: Sundays are shit
 Version: 3151531213.115516531
 */
-body {
-  background-color: red; }
+header {
+  background-color: #281400;
+  text-align: center; }
+  header .navbar-default {
+    background-color: #281400;
+    border: 0;
+    text-transform: capitalize; }
+  header .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top; }
+  header .navbar-nav {
+    width: 100%;
+    text-align: center; }
+    header .navbar-nav > li {
+      float: none;
+      display: inline-block; }
+  header .navbar .navbar-collapse {
+    text-align: center; }
+  header li {
+    font-size: 2em; }
+  header h1 {
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 1em;
+    font-size: 4em; }
+  header p {
+    color: white;
+    font-size: 3em; }
+  header p::first-letter {
+    text-transform: uppercase; }
+  header .tocatalog {
+    background-color: #a28f61;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.5em;
+    margin: 3em; }
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+main .container {
+  display: flex;
+  flex-wrap: wrap; }
+  main .container article {
+    padding: 1.9em; }
+    main .container article .status {
+      text-transform: uppercase; }
+    main .container article p, main .container article h4 {
+      text-transform: capitalize; }
+main h2 {
+  text-align: center;
+  text-transform: capitalize;
+  padding-bottom: 1em; }
+
+footer {
+  background-color: #0f3e57;
+  text-align: center; }
+  footer nav {
+    padding-bottom: 2em; }
+  footer h4 {
+    color: white;
+    text-transform: capitalize; }
+  footer li {
+    color: #4e6a78;
+    padding: 0.5em;
+    padding-left: 0;
+    text-align: left; }
+  footer button {
+    background-color: #0f3e57;
+    color: white; }
+  footer #quicklinks li, footer #socialnav li {
+    text-transform: capitalize; }
+  footer i {
+    padding-right: 0.5em; }
+  footer section {
+    text-align: left; }
+
+li {
+  list-style: none; }
 
 /*# sourceMappingURL=style.css.map */

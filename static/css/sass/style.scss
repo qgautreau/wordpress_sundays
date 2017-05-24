@@ -4,6 +4,116 @@ Description: Sundays are shit
 Version: 3151531213.115516531
 */
 
-body {
-    background-color: red;
+@import "header";
+
+header {
+    background-color: $header-color;
+    text-align: $header-align;
+    .navbar-default {
+        background-color: $header-color;
+        border: 0;
+        text-transform: capitalize;
+    }
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+        > li {
+          float: none;
+          display: inline-block;
+        }
+    }
+
+    .navbar .navbar-collapse {
+      text-align: center;
+    }
+    li {
+        font-size: 2em;
+    }
+
+    h1 {
+        color: $header-titles;
+        text-transform: uppercase;
+        padding-bottom: 1em;
+        font-size: 4em;
+    }
+    p {
+        color: $header-titles;
+        font-size: 3em;
+    }
+    p::first-letter {
+        text-transform: uppercase;
+    }
+    .tocatalog {
+        background-color: $header-button;
+        color: $header-titles;
+        text-transform: uppercase;
+        padding: 0.5em;
+        margin: 3em;
+    }
+}
+
+@import "main";
+
+main {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        article{
+            padding: 1.9em;
+            .status {
+                text-transform: uppercase;
+            }
+            p, h4 {
+                text-transform: capitalize;
+            }
+        }
+    }
+    h2 {
+        text-align: center;
+        text-transform: capitalize;
+        padding-bottom: 1em;
+    }
+}
+@import "footer";
+
+footer {
+    background-color: $primary-color;
+    text-align: center;
+    nav {
+        padding-bottom: 2em;
+    }
+    h4 {
+        color: $titles-color;
+        text-transform: capitalize;
+    }
+    li {
+        color: $nav-color;
+        padding: 0.5em;
+        padding-left: 0;
+        text-align: left;
+    }
+    button {
+        background-color: $primary-color;
+        color: $titles-color;
+    }
+    #quicklinks, #socialnav {
+        li {
+            text-transform: capitalize;
+        }
+    }
+    i {
+        padding-right: 0.5em;
+    }
+    section {
+        text-align: left;
+    }
+}
+
+li {
+    list-style: none;
 }
