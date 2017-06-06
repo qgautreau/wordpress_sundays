@@ -24,9 +24,19 @@
             </div>
             <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                 <section>
-                    <h4>newsletter</h4>
-                    <input type="text" placeholder="You email...">
-                    <button>ok</button>
+                    <h4>Newsletter</h4>
+                    <form method="post">
+                        <input type="email" name="mail" placeholder="enter your email">
+                        <button type="submit">ok</button>
+                    </form>
+                    <?php
+                        if(isset($_POST['mail'])){
+                            $_POST['mail'];
+                            $wpdb->insert( 'mails', array(
+                                'mail' => $_POST['mail'],
+                            ));
+                        }
+                    ?>
                 </section>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">

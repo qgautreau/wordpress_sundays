@@ -20,7 +20,7 @@
                     <li><a href="<?php echo get_page_link(2); ?>">catalog</a></li>
                     <li><a href="">about us</a></li>
                     <li><a href="">stories</a></li>
-                    <li><a href="<?php echo get_page_link(1); ?>">blog</a></li>
+                    <li><a href="<?php echo get_page_link(18); ?>">blog</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     <i class="fa fa-search" aria-hidden="true"></i>

@@ -24,7 +24,8 @@
                    <img src='http://lorempixel.com/150/200' alt='img'>
                    <h4><?php echo $cats[0]->name; ?></h4>
                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                   <h5 class="price"><?php the_meta(); ?></h5>';
+                   <!-- <h5 class="price"><?php the_meta(); ?></h5>'; -->
+                   <?php echo "Price : ".get_field('price'); ?>
                    </article>
                    <?php
                }
